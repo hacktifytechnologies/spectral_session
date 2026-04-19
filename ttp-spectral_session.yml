@@ -1,4 +1,4 @@
-- name: 'HACKTIFY: Setup Spectral Session Lab'
+- name: 'HACKTIFY: Setup spectral session Lab'
   id: 7bb7f167-b2f0-b8d5-2a73-e7ac693cc681
   description: >-
     An analytics platform called Phantom Analytics is running on port 5000.
@@ -7,8 +7,8 @@
     credentials and explore how the application serves files. Investigate
     the server's configuration, forge access credentials for the Vault, and
     use the Vault's archive features to achieve administrative access. Be
-    aware that the environment has runtime restrictions — standard
-    approaches may be blocked and you will need to think creatively.
+    aware that the environment has runtime restrictions, standard approaches
+    may be blocked and you will need to think creatively.
   tactic: initial-access
   technique_id: T1190
   technique_name: 'Exploit Public-Facing Application'
@@ -19,16 +19,13 @@
     - name: sh
       platform: linux
       command: |
-        git clone https://github.com/hacktifytechnologies/spectral_session /opt/hacktify/spectral_session
-        cd /opt/hacktify/spectral_session
-        chmod +x setup.sh
-        bash setup.sh -a
+        git clone https://github.com/hacktifytechnologies/spectral_session /opt/hacktify/spectral_session && cd /opt/hacktify/spectral_session && docker compose up -d --build && echo 'Lab deployment complete'
       code: null
       language: null
       build_target: null
       payloads: []
       uploads: []
-      timeout: 300
+      timeout: 600
       parsers: []
       cleanup: []
       variations: []
