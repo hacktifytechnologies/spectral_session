@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   spectral-session:
-    build: .
     image: hacktifytechnologies/spectral-session:1.0
     container_name: spectral-session
     ports:
